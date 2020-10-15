@@ -15,10 +15,10 @@ class Conn
 	public function conectar(){
 		try{
 			$this->connect = new PDO('mysql:host='.$this->host.';port='.$this->port.';dbname='.$this->dbname, $this->user, $this->pass);
-			echo "ligação realizada com sucesso!";
+			//echo "ligação realizada com sucesso!";
 			return $this->connect;
 		}catch (Exception $ex) {
-			echo "ligação não realizada com sucesso! Erro: ". $ex;
+			// echo "ligação não realizada com sucesso! Erro: ". $ex;
 			return false;
 		}
 	}

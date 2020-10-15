@@ -11,12 +11,13 @@ require_once('./Usuario.php');
 	<body>
 		<?php
 			$cadastrar = new Usuario();
-			$resultados = $cadastrar->listar();
+			$resultados_users = $cadastrar->listar();
 
-			foreach($resultados as $resultado){	
-				echo $resultado['id'] . "<br>";
-				echo utf8_encode($resultado['nome']) . "<br>";
-				echo $resultado['email'] . "<br>";
+			foreach($resultados_users as $resultado_user){
+				echo $resultado_user['id'] . "<br>";
+				echo utf8_encode($resultado_user['nome']) . "<br>";
+				echo $resultado_user['email'] . "<br>";
+				echo "<hr>";
 			}
 
 
