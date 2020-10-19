@@ -11,11 +11,11 @@ require_once("ChequeEspecial.php");
 	<body>
 		<?php
 
-		$chequeComum = new ChequeComum(2200, "Careca");
+		$chequeComum = new ChequeComum(2000, "Comum");
 
 		echo $chequeComum->calcularJuro();
 		echo "<hr>";
-		$chequeEspecial = new ChequeEspecial(2100.10, "Em Branco");
+		$chequeEspecial = new ChequeEspecial(2000, "Especial");
 		echo $chequeEspecial->calcularJuro();
 
 

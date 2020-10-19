@@ -15,10 +15,12 @@ abstract class Cheque
 	// public function verValor():string{
 	// 	return "Valor do cheque {$this->tipo} é {$this->valor}€<br>";
 	// }
-
+	abstract function calcularJuro();
+	
 	public function converterReal($valor){
 		return number_format($valor,'2',",", '.');
 	}
+
 }
 
 
