@@ -3,7 +3,7 @@ require "/home/andre/pass.php";
 /**
  *
  */
-class Conn
+abstract class Conn
 {
 
 	public string $db = "mysql";
@@ -12,7 +12,7 @@ class Conn
 	public string $pass = PASS;
 	public string $dbname = "celke";
 	public int $port = 3306;
-	public object $connect = null;
+	public object $connect;
 
 	public function connect(){
 		 try{
