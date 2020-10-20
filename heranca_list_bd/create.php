@@ -14,12 +14,12 @@ require_once("Contact.php");
 
 	<?php
 	$formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-	var_dump($formData);
 	if(!empty($formData['sendCreateMsg'])){
-		echo "salvar";
+		$create_msg_contact = new Contact();
+		$create_msg_contact->create($formData);
 	}
-	$listMsgContact = new Contact();
-	echo $listMsgContact->create();
+
+
 
 	?>
 	<div class="row">
@@ -42,7 +42,7 @@ require_once("Contact.php");
 				</div>
 				<div class="form-group">
 					<label>Conteúdo da Mensagem: </label>
-					<textarea  class="form-control form-control-sm" name="msg_content" placeholder="Conteúdo da Mensagem"  rows="4" cols="20" required>Conteúdo da Mensagem</textarea><br><br>
+					<textarea  class="form-control form-control-sm" name="msg_content" placeholder="Conteúdo da Mensagem"  rows="4" cols="50" required>Conteúdo da Mensagem</textarea><br><br>
 				</div>
 				<input class="btn btn-info" type="submit" value="Submeter" name="sendCreateMsg">
 			</form>
