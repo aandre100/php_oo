@@ -9,6 +9,7 @@ require_once('Conn.php');
 class Contact extends Conn
 {
 	public object $conn;
+	public array $formData;
 
 	public function list(): array{
 		$this->conn = $this->connect();
@@ -25,17 +26,37 @@ class Contact extends Conn
 		return $retorno;
 		//var_dump($result);
 	}
-	public function create($values){
-		// var_dump($values);
-		// exit();
+
+	public function view(){
+		$id = 1;
 		$this->conn = $this->connect();
-		$sqlCreate = "INSERT INTO msgs_contacts (name, email, msg_title, msg_content) VALUES (:name, :email, :title, :content)";
-		$createContact = $this->conn->prepare($sqlCreate);
-		$createContact->bindValue(':name', $values["name"]);
-		$createContact->bindValue(':email', $values["email"]);
-		$createContact->bindValue(':title', $values["msg_title"]);
-		$createContact->bindValue(':content', $values["msg_content"]);
-		return $createContact->execute();
+		$query_msg_contact = "SELECT id, name, email, msg_title, msg_content
+		FROM msgs_contacts
+		WHERE id = :id";
+		$listar_msgs_contacts = $this->conn->prepare($query_msg_contact);
+		$listar_msgs_contacts->bindParam(':id', $id);
+		$listar_msgs_contacts->execute();
+		return $listar_msgs_contacts->fetchAll();
+
+	}
+
+	public function create(){
+		$this->conn = $this->connect();
+		$query_msgs_contacts = "INSERT INTO msgs_contacts
+		   (name, email, msg_title, msg_content, created) VALUES
+		   (:name, :email, :msg_title, :msg_content, NOW())";
+		   $creat_msgs_contacts = $this->conn->prepare($query_msgs_contacts);
+		   $creat_msgs_contacts->bindParam(':name', $this->formData['name'], PDO::PARAM_STR);
+		   $creat_msgs_contacts->bindParam(':email', $this->formData['email'], PDO::PARAM_STR);
+		   $creat_msgs_contacts->bindParam(':msg_title', $this->formData['msg_title'], PDO::PARAM_STR);
+		   $creat_msgs_contacts->bindParam(':msg_content', $this->formData['msg_content'], PDO::PARAM_STR);
+
+		   $creat_msgs_contacts->execute();
+		   if ($creat_msgs_contacts->rowCount()) {
+			   return true;
+		   } else {
+			   return false;
+		   }
 	}
 }
 

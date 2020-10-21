@@ -14,10 +14,17 @@ require_once("Contact.php");
 
 	<?php
 	$formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-	if(!empty($formData['sendCreateMsg'])){
-		$create_msg_contact = new Contact();
-		$create_msg_contact->create($formData);
-	}
+	if(!empty($formData['sendCreatMsg'])){
+	   $creat_msg_contacts = new Contact();
+	   $creat_msg_contacts->formData = $formData;
+	   $value = $creat_msg_contacts->create();
+
+	   if($value){
+		   echo "Mensagem cadastrada com sucesso!";
+	   }else{
+		   echo "Erro: Mensagem não cadastrada com sucesso!";
+	   }
+   }
 
 
 
@@ -44,7 +51,7 @@ require_once("Contact.php");
 					<label>Conteúdo da Mensagem: </label>
 					<textarea  class="form-control form-control-sm" name="msg_content" placeholder="Conteúdo da Mensagem"  rows="4" cols="50" required>Conteúdo da Mensagem</textarea><br><br>
 				</div>
-				<input class="btn btn-info" type="submit" value="Submeter" name="sendCreateMsg">
+				<input class="btn btn-info" type="submit" value="Submeter" name="sendCreatMsg">
 			</form>
 			<a href="index.php">Listar</a><br><br>
 		</div>

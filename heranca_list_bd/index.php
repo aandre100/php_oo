@@ -28,7 +28,9 @@ require_once("Contact.php");
 				echo "<hr>";
 			}
 
-
+			$result_list_contacts = $listMsgContact->view();
+			var_dump($result_list_contacts);
+			exit();
 		 ?>
 </body>
 </html>
