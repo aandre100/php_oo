@@ -1,4 +1,6 @@
 <?php
+session_start();
+ob_start(); //quando gerar erro e nãõ redireccionar usar ob_start
 require_once("Conn.php");
 require_once("Contact.php");
 $idUrl = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
@@ -16,9 +18,14 @@ if(!empty($formData['sendEditMsg'])){
    $value = $editMsgContacts->update();
 
    if($value){
-	   echo "Mensagem de contacto editada com sucesso!";
+   	$_SESSION['msg'] = "<div class='alert alert-success'>Mensagem editada com êxito!!!</div>";
+
+   	header("Location: index.php");
+   	exit();
    }else{
-	   echo "Erro: Mensagem de contacto não editada com sucesso!";
+   	$_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Mensagem de contacto não editada com sucesso!</div>";
+   	header("Location: index.php");
+   	exit();
    }
 }
 ?>

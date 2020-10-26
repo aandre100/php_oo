@@ -1,10 +1,15 @@
 <?php
+session_start();
+ob_start(); //quando gerar erro e nãõ redireccionar usar ob_start
 require_once("Conn.php");
 require_once("Contact.php");
 $idUrl = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
 //verificar se existe // ID
 if(!isset($idUrl) || empty($idUrl)){
-	echo "Tem de Introduzir um id!!!!";
+	$_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Tem de Introduzir um id!!!!</div>";
+	header("Location: index.php");
+	exit();
+
 }
 ?>
 <!DOCTYPE html>

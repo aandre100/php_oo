@@ -1,4 +1,6 @@
 <?php
+session_start();
+ob_start(); //quando gerar erro e nãõ redireccionar usar ob_start
 require_once("Contact.php");
 ?>
 <!DOCTYPE html>
@@ -20,10 +22,15 @@ require_once("Contact.php");
 	   $value = $creatMsgContacts->create();
 
 	   if($value){
-		   echo "Mensagem cadastrada com sucesso!";
-	   }else{
-		   echo "Erro: Mensagem não cadastrada com sucesso!";
-	   }
+ 	  	$_SESSION['msg'] = "<div class='alert alert-success'>Mensagem criada com êxito!!!</div>";
+
+ 	  	header("Location: index.php");
+ 	  	exit();
+ 	  }else{
+ 	  	$_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Mensagem de contacto não criada com sucesso!</div>";
+ 	  	header("Location: index.php");
+ 	  	exit();
+ 	  }
    }
 
 

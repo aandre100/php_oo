@@ -18,9 +18,7 @@ require_once("Contact.php");
 		<div class="container">
 		<h1>Listar Mensagem de Contacto</h1>
 		<?php if(isset($_SESSION['msg']) && !empty($_SESSION['msg'])){ ?>
-		<div class="alert alert-success" id="cena-success">
 		  <?php echo $_SESSION['msg']; unset($_SESSION['msg'])?>
-		</div>
 	<?php } ?>
 		<a href="create.php">Cadastrar</a><br><br>
 		<?php
