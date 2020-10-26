@@ -15,9 +15,9 @@ require_once("Contact.php");
 	<?php
 	$formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 	if(!empty($formData['sendCreatMsg'])){
-	   $creat_msg_contacts = new Contact();
-	   $creat_msg_contacts->formData = $formData;
-	   $value = $creat_msg_contacts->create();
+	   $creatMsgContacts = new Contact();
+	   $creatMsgContacts->formData = $formData;
+	   $value = $creatMsgContacts->create();
 
 	   if($value){
 		   echo "Mensagem cadastrada com sucesso!";

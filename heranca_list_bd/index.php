@@ -25,6 +25,7 @@ require_once("Contact.php");
 				echo "Email: " . $email . '<br>';
 				echo "Titulo Mensagem: " . $msg_title . '<br>';
 				echo "Conteúdo: " . utf8_encode($msg_content) . '<br>';
+				echo "<a href='view.php?id=".$id."'>Ver</a>";
 				echo "<hr>";
 			}
 
