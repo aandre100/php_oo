@@ -11,6 +11,10 @@ class ChequeEspecial extends Cheque
     $converterReal = $this->converterReal($valorComJuro);
     	return "Valor do cheque {$this->tipo} é {$converterReal}€<br>";
   }
+// Método final não pode ser reescrito
+final public function converterReal($valor){
+    return number_format($valor,'2',",", '.');
+  }
 
 }
 

@@ -12,6 +12,7 @@ class ChequeComum extends Cheque
     $valorConvertido = parent::converterReal($valorComJuro);
     return "Valor do cheque {$this->tipo} é {$valorConvertido}€<br>";
   }
+
 }
 
  ?>

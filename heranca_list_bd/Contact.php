@@ -47,11 +47,12 @@ class Contact extends Conn
 		$query_msgs_contacts = "INSERT INTO msgs_contacts
 		   (name, email, msg_title, msg_content, created) VALUES
 		   (:name, :email, :msg_title, :msg_content, NOW())";
+			 $content = utf8_encode($this->formData['msg_content']);
 		   $creat_msgs_contacts = $this->conn->prepare($query_msgs_contacts);
 		   $creat_msgs_contacts->bindParam(':name', $this->formData['name'], PDO::PARAM_STR);
 		   $creat_msgs_contacts->bindParam(':email', $this->formData['email'], PDO::PARAM_STR);
 		   $creat_msgs_contacts->bindParam(':msg_title', $this->formData['msg_title'], PDO::PARAM_STR);
-		   $creat_msgs_contacts->bindParam(':msg_content', $this->formData['msg_content'], PDO::PARAM_STR);
+		   $creat_msgs_contacts->bindParam(':msg_content', $content, PDO::PARAM_STR);
 
 		   $creat_msgs_contacts->execute();
 		   if ($creat_msgs_contacts->rowCount()) {
@@ -69,10 +70,11 @@ class Contact extends Conn
 		   $edit_msg_contact = $this->conn->prepare($query_msg_contact);
 		    // var_dump($this->formData['id']);
 			// exit();
+			 $content = utf8_encode($this->formData['msg_content']);
 		   $edit_msg_contact->bindParam(':name', $this->formData['name'], PDO::PARAM_STR);
 		   $edit_msg_contact->bindParam(':email', $this->formData['email'], PDO::PARAM_STR);
 		   $edit_msg_contact->bindParam(':msg_title', $this->formData['msg_title'], PDO::PARAM_STR);
-		   $edit_msg_contact->bindParam(':msg_content', $this->formData['msg_content'], PDO::PARAM_STR);
+		   $edit_msg_contact->bindParam(':msg_content', $content, PDO::PARAM_STR);
 		   $edit_msg_contact->bindParam(':id', $this->formData['id'], PDO::PARAM_INT);
 		   $edit_msg_contact->execute();
 		   // $arr = $edit_msg_contact->errorInfo();
@@ -98,6 +100,12 @@ class Contact extends Conn
 		}
 
 	}
+	public static function str_to_utf8($str) {
+    $decoded = utf8_decode($str);
+    if (mb_detect_encoding($decoded , 'UTF-8', true) === false)
+        return $str;
+    return $decoded;
+}
 
 
 }

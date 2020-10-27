@@ -36,7 +36,7 @@ require_once("Contact.php");
 				echo "Nome: " . $name . '<br>';
 				echo "Email: " . $email . '<br>';
 				echo "Titulo Mensagem: " . $msg_title . '<br>';
-				echo "Conteúdo: " . $msg_content . '<br>';
+				echo "Conteúdo: " . Contact::str_to_utf8($msg_content) . '<br>';
 				echo "<a class='btn btn-info' href='view.php?id=".$id."'>Ver</a>&nbsp;";
 				echo "<a class='btn btn-success' href='edit.php?id=".$id."'>Editar</a>&nbsp;";
 				echo "<a class='btn btn-danger' href='delete.php?id=".$id."'>Apagar</a>";
