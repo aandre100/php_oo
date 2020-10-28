@@ -1,5 +1,6 @@
 <?php
 require_once("CursoPosGraduacao.php");
+require_once("CursoGraduacao.php");
 
 
  ?>
@@ -11,10 +12,14 @@ require_once("CursoPosGraduacao.php");
 	</head>
 	<body>
     <?php
-    $disciplina = new CursoPosGraduacao();
-    $disciplina->disciplina("Curso de Botânica");
-    echo '<br>';
-    $disciplina->professor("André Cardoso");
+    $cursoPosGraduacao = new CursoPosGraduacao();
+    echo $cursoPosGraduacao->disciplina("Desenvolvimento WEB");
+    echo $cursoPosGraduacao->professor("André Cardoso");
+	echo '<hr>';
+	$cursoGraduacao = new CursoGraduacao();
+	echo $cursoGraduacao->disciplina("Sistemas Linux");
+	echo $cursoGraduacao->professor("Thomas Whatson");
+
 
      ?>
 

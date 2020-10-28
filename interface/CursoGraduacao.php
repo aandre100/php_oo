@@ -3,7 +3,7 @@ require_once("ICurso.php");
 /**
  *
  */
-class CursoPosGraduacao implements ICurso
+class CursoGraduacao implements ICurso
 {
   public string $nomeDisciplina;
   public string $nomeProfessor;
@@ -18,5 +18,8 @@ class CursoPosGraduacao implements ICurso
 
   }
 }
+
+
+
 
  ?>
