@@ -18,7 +18,11 @@ require_once("Bonus.php");
 		echo $funcionario->verSalario();
 		$bonus = new Bonus();
 		$bonus->salario = 600;
+		echo '<br>';
 		echo $bonus->verBonus();
+
+
+
 
 
 		 ?>
