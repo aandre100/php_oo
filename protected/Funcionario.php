@@ -20,6 +20,7 @@ class Funcionario
 	 */
 	public function verSalario(): string {
 		return "O Funcionário {$this->nome} aufere o salário de {$this->converterSalario($this->salario)} <br>";
+	
 	}
 	/**
 	 * Recebe o salário e retorna convertido
@@ -31,10 +32,15 @@ class Funcionario
 		$this->salarioConvertido = number_format($valor, '2', ',', '.');
 		return $this->salarioConvertido;
 	}
+	/**
+	 * Método protegido, somente pode ser chamado pela classe ou classe filha
+	 * @return string Retorna o bonus
+	 */
 	protected function bonusCalculado(): string{
 		$retorno = $this->converterSalario($this->bonus);
 		return $retorno;
 	}
+	
 }
 
 

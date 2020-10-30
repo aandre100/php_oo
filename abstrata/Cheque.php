@@ -3,6 +3,9 @@
 /**
  *
  */
+/**
+ * Cheque
+ */
 abstract class Cheque
 {
 	public float $valor;

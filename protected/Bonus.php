@@ -1,6 +1,6 @@
 <?php
 /**
- * Esta classe serve para mostrar o bonus
+ * Bonus é uma classe filha da classe funcionário
  */
 
 class Bonus extends Funcionario
