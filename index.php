@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once('./Usuario.php');
 
  ?>
@@ -9,7 +9,7 @@ require_once('./Usuario.php');
 		<title></title>
 	</head>
 	<body>
-		<?php
+		<?php 
 			$cadastrar = new Usuario();
 			$resultados_users = $cadastrar->listar();
 

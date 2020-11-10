@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once("CursoPosGraduacao.php");
 require_once("CursoGraduacao.php");
 
@@ -11,7 +11,7 @@ require_once("CursoGraduacao.php");
 		<title></title>
 	</head>
 	<body>
-    <?php
+    <?php 
     $cursoPosGraduacao = new CursoPosGraduacao();
     echo $cursoPosGraduacao->disciplina("Desenvolvimento WEB");
     echo $cursoPosGraduacao->professor("André Cardoso");

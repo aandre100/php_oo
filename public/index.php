@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once("Funcionario.php");
 
  ?>
@@ -10,7 +10,7 @@ require_once("Funcionario.php");
 		<title></title>
 	</head>
 	<body>
-		<?php
+		<?php 
 		$funcionario = new Funcionario();
 		$funcionario->nome = "André Cardoso";
 		$funcionario->salario = 1000;

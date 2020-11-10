@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once("ChequeComum.php");
 require_once("ChequeEspecial.php");
  ?>
@@ -9,7 +9,7 @@ require_once("ChequeEspecial.php");
 		<title></title>
 	</head>
 	<body>
-		<?php
+		<?php 
 
 		$chequeComum = new ChequeComum(2000, "Comum");
 

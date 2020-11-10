@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once("Disciplina.php");
 ?>
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ require_once("Disciplina.php");
 		<title></title>
 	</head>
 	<body>
-		<?php
+		<?php 
 		$estado = new Disciplina("André Cardoso", 1, 5);
 		echo $estado->situacao();
 		echo Disciplina::$media ."<br>";

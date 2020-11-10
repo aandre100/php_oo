@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 ob_start(); //quando gerar erro e nãõ redireccionar usar ob_start
 require_once("Conn.php");
@@ -40,7 +40,7 @@ if(!empty($formData['sendEditMsg'])){
 	<body>
 		<h1>Editar Mensagem de Contacto</h1>
 		<a href="index.php">Listar</a><br><br>
-		<?php
+		<?php 
 		$viewMsgContact = new Contact();
 		// var_dump($id);
 		// exit();
@@ -57,22 +57,22 @@ if(!empty($formData['sendEditMsg'])){
 					<h1>Cadastrar Mensagem de Contacto</h1>
 					<form name="CreateMsg" action "" method="post">
 
-						<input type="hidden" value="<?php echo $id; ?>" name="id">
+						<input type="hidden" value="<?php  echo $id; ?>" name="id">
 						<div class="form-group">
 							<label>Nome: </label>
-							<input class="form-control form-control-sm" type="text" value="<?php echo $name; ?>" name="name" placeholder="Nome completo" required>
+							<input class="form-control form-control-sm" type="text" value="<?php  echo $name; ?>" name="name" placeholder="Nome completo" required>
 						</div>
 						<div class="form-group">
 							<label>Email: </label>
-							<input class="form-control form-control-sm" type="email" value="<?php echo $email; ?>"  name="email" placeholder="Email" required>
+							<input class="form-control form-control-sm" type="email" value="<?php  echo $email; ?>"  name="email" placeholder="Email" required>
 						</div>
 						<div class="form-group">
 							<label>Titulo da Mensagem: </label>
-							<input  class="form-control form-control-sm" type="text" value="<?php echo $msg_title; ?>" name="msg_title" placeholder="Titulo da Mensagem" required><br><br>
+							<input  class="form-control form-control-sm" type="text" value="<?php  echo $msg_title; ?>" name="msg_title" placeholder="Titulo da Mensagem" required><br><br>
 						</div>
 						<div class="form-group">
 							<label>Conteúdo da Mensagem: </label>
-							<textarea  class="form-control form-control-sm" name="msg_content" placeholder="Conteúdo da Mensagem"  rows="4" cols="50" required><?php echo utf8_encode($msg_content); ?></textarea><br><br>
+							<textarea  class="form-control form-control-sm" name="msg_content" placeholder="Conteúdo da Mensagem"  rows="4" cols="50" required><?php  echo utf8_encode($msg_content); ?></textarea><br><br>
 						</div>
 						<input class="btn btn-info" type="submit" value="Salvar" name="sendEditMsg">
 					</form>

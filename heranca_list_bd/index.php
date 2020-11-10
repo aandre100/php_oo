@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 require_once("Conn.php");
 require_once("Contact.php");
@@ -17,17 +17,17 @@ require_once("Contact.php");
 	<body>
 		<div class="container">
 		<h1>Listar Mensagem de Contacto</h1>
-		<?php if(isset($_SESSION['msg']) && !empty($_SESSION['msg'])){ ?>
-		  <?php echo $_SESSION['msg']; unset($_SESSION['msg'])?>
-	<?php } ?>
+		<?php  if(isset($_SESSION['msg']) && !empty($_SESSION['msg'])){ ?>
+		  <?php  echo $_SESSION['msg']; unset($_SESSION['msg'])?>
+	<?php  } ?>
 		<a href="create.php">Cadastrar</a><br><br>
-		<?php
+		<?php 
 			$listMsgContact  = new Contact();
 			$result_list_contacts = $listMsgContact->list();
 			?>
 			<div class="card text-white bg-primary mb-3">
 				<div class="card-body">
-			<?php
+			<?php 
 
 			foreach($result_list_contacts as $row_list_contact){
 				extract($row_list_contact);

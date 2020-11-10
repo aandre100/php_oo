@@ -1,4 +1,4 @@
-<?php
+<?php 
 date_default_timezone_set('Europe/London');
  ?>
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ date_default_timezone_set('Europe/London');
 		<title></title>
 	</head>
 	<body>
-		<?php
+		<?php 
 		if(phpversion() >= 7.0):
 			echo phpversion() . " - Olá mundo";
 		else:

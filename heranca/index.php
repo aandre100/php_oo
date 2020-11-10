@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once("ClientePessoaFisica.php");
 require_once("ClientePessoaJuridica.php");
 
@@ -10,7 +10,7 @@ require_once("ClientePessoaJuridica.php");
 		<title></title>
 	</head>
 	<body>
-		<?php
+		<?php 
 			$cliente = new ClientePessoaFisica();
 			$cliente->logradouro = "Rua Nova das Perlinhas";
 			$cliente->bairro = "Bairro 12";

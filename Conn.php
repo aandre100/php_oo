@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace Sts\Models;
 
 use \PDO;

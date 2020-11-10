@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Bonus é uma classe filha da classe funcionário
  */

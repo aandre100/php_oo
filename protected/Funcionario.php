@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * A classe Funcionário calcula o salário do colaborador
  * @author André Cardoso

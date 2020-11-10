@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 ob_start(); //quando gerar erro e nãõ redireccionar usar ob_start
 require_once("Contact.php");
@@ -14,7 +14,7 @@ require_once("Contact.php");
 <body>
 
 
-	<?php
+	<?php 
 	$formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 	if(!empty($formData['sendCreatMsg'])){
 	   $creatMsgContacts = new Contact();

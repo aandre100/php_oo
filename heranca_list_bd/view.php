@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 ob_start(); //quando gerar erro e nãõ redireccionar usar ob_start
 require_once("Conn.php");
@@ -21,7 +21,7 @@ if(!isset($idUrl) || empty($idUrl)){
 	<body>
 		<h1>Detalhes da Mensagem de Contacto</h1>
 		<a href="index.php">Listar</a><br><br>
-		<?php
+		<?php 
 		$viewMsgContact = new Contact();
 		// var_dump($id);
 		// exit();

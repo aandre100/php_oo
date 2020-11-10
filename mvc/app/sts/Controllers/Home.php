@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace Sts\Controllers;
 /**
  * carrega o index

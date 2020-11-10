@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace Sts\Models;
 
 require "/home/andre/pass.php";
