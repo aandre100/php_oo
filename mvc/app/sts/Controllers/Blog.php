@@ -13,7 +13,8 @@ class Blog
         echo "Controller da página Blog<br>";
         $listarArtigo = new \Sts\Models\StsListarBlog();
         $this->dados['artigos'] = $listarArtigo->listar();
-        $carregarView = new \Core\ConfigView("sts/views/blog/listarArtigo", $this->dados);
+        $carregarView = new \Core\ConfigView("sts/Views/blog/listarArtigo", $this->dados);
+        $carregarView->renderizar();
         
     }
     
