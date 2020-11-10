@@ -1,9 +1,8 @@
 <?php
 namespace Sts\Models;
 
-use \PDO;
-
 require "/home/andre/pass.php";
+use \PDO;
 /**
  *
  */
