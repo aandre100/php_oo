@@ -17,7 +17,8 @@ class ConfigView {
         if(file_exists('app/'.$this->nome.'.php')){
             include 'app/'.$this->nome.'.php';
         }else{
-           echo "Erro ao carregar view: {$this->nome} ";
+            echo "Erro ao carregar a página<br>";
+           //echo "Erro ao carregar view: {$this->nome} ";
         }
     }
 }

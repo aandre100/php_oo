@@ -32,7 +32,7 @@ class ConfigController
             $this->urlController = ucwords("home");
             $this->urlMetodo = ucwords("index");
         }
-        echo "Controller: {$this->urlController} - Método: {$this->urlMetodo} <br>";
+    
     }
     public function carregar(){
         $classe = "\\Sts\\Controllers\\" .$this->urlController ;

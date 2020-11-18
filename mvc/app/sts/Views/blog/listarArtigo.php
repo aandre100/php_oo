@@ -6,10 +6,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 	</head>
-	<body>
+	<body><div class="container">
         <h1>listar artigo!!!</h1>
-        <table>
+        
+        <table class="table table-dark ">
             <tr>
                 <th>id</th><th>titulo</th><th>conteúdo</th>
         <?php foreach($this->dados['artigos'] as $artigo){ ?>    
@@ -19,6 +22,8 @@
                 <td> <?php echo $artigo['conteudo']; ?></td>
 </tr>
         <?php } ?>
+        </table>
+        </div>
 
 	</body>
 </html>

@@ -10,7 +10,6 @@ class Blog
     private array $dados;
 
     public function index(){
-        echo "Controller da página Blog<br>";
         $listarArtigo = new \Sts\Models\StsListarBlog();
         $this->dados['artigos'] = $listarArtigo->listar();
         $carregarView = new \Core\ConfigView("sts/Views/blog/listarArtigo", $this->dados);
