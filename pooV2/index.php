@@ -1,5 +1,8 @@
 <?php
-require("Usuario.php");
+require("Nota.php");
 
-$user = new Usuario("André Cardoso", "andre@spzn.pt");
-echo json_encode($user);
+$nota = new Nota();
+$nota->setNota("André Cardoso", "Português", 10, 4);
+echo $nota->getNota();
+;
+?>
